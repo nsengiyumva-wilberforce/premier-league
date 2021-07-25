@@ -1,0 +1,10 @@
+table {
+    width: 100%;
+  }
+  .mat-column-Div{
+    border-right: 1px solid indigo;
+    width: 32px;
+    padding-right: 24px;
+    text-align: center;
+  }
+  

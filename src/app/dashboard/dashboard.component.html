@@ -1,0 +1,39 @@
+<div class = "mat-elevation-z8">
+<table mat-table [dataSource] = "season">
+    <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+<!-- Div Column-->
+   <ng-container matColumnDef="Div">
+    <th mat-header-cell *matHeaderCellDef> Div</th>
+    <td mat-cell *matCellDef="let element"> {{element.Div}} </td>
+   </ng-container>
+   <!-- Div Column-->
+   <ng-container matColumnDef="Date">
+    <th mat-header-cell *matHeaderCellDef> Date</th>
+    <td mat-cell *matCellDef="let element"> {{element.Date}} </td>
+   </ng-container>
+   <!-- Home Team-->
+   <ng-container matColumnDef="HomeTeam">
+    <th mat-header-cell *matHeaderCellDef>HomeTeam</th>
+    <td mat-cell *matCellDef="let element"> {{element.HomeTeam}} </td>
+   </ng-container>
+   <!-- Div Column-->
+   <ng-container matColumnDef="AwayTeam">
+    <th mat-header-cell *matHeaderCellDef> AwayTeam</th>
+    <td mat-cell *matCellDef="let element"> {{element.AwayTeam}} </td>
+   </ng-container>
+   <!-- Div Column-->
+   <ng-container matColumnDef="FTHG">
+    <th mat-header-cell *matHeaderCellDef> FTHG</th>
+    <td mat-cell *matCellDef="let element"> {{element.FTHG}} </td>
+   </ng-container>
+   <!-- Div Column-->
+   <ng-container matColumnDef="FTAG">
+    <th mat-header-cell *matHeaderCellDef> FTAG</th>
+    <td mat-cell *matCellDef="let element"> {{element.FTAG}} </td>
+   </ng-container>
+   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator #paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
