@@ -2,6 +2,7 @@ import { AfterViewInit, ViewChild, Component, OnInit } from '@angular/core';
 import { TeamsService } from '../teams.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,10 +11,9 @@ import { MatPaginator } from '@angular/material/paginator';
 })
 export class DashboardComponent implements OnInit {
 displayedColumns: string[] = ['Div', 'Date', 'AwayTeam', 'HomeTeam', 'FTHG', 'FTAG'];
-season = [];
-
-@ViewChild('paginator') paginator: MatPaginator;
-
+season = new MatTableDataSource<any>();
+@ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+@ViewChild(MatSort, {static: true}) sort: MatSort;
   constructor( private teamsService: TeamsService) { }
 
   ngOnInit(): void {
@@ -23,7 +23,9 @@ season = [];
   getSeason(): any{
     this.teamsService.getSeason()
       .subscribe((data) => {
-        this.season = data;
+        this.season.data = data;
+        this.season.paginator = this.paginator;
+        this.season.sort = this.sort;
       });
   }
 

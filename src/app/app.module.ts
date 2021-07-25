@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -27,7 +28,8 @@ import { SeasonsComponent } from './seasons/seasons.component';
     MatToolbarModule,
     MatTableModule,
     HttpClientModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatFormFieldModule
     ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,13 @@
+/* Structure */
 table {
-    width: 100%;
-  }
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
   .mat-column-Div{
     border-right: 1px solid indigo;
     width: 32px;
